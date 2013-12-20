@@ -72,6 +72,8 @@ class DirectAuthorizeRequest extends AbstractRequest
             $data['IssueNumber'] = $this->getCard()->getIssueNumber();
         }
 
+        $data['PROFILE'] = 'LOW';
+
         return $data;
     }
 
