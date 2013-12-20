@@ -50,6 +50,8 @@ class DirectAuthorizeRequest extends AbstractRequest
         $data['DeliveryPhone'] = $card->getShippingPhone();
         $data['CustomerEMail'] = $card->getEmail();
 
+        $data['PROFILE'] = 'LOW';
+
         return $data;
     }
 
@@ -71,8 +73,6 @@ class DirectAuthorizeRequest extends AbstractRequest
         if ($this->getCard()->getIssueNumber()) {
             $data['IssueNumber'] = $this->getCard()->getIssueNumber();
         }
-
-        $data['PROFILE'] = 'LOW';
 
         return $data;
     }
